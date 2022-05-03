@@ -1,5 +1,10 @@
 <?php
 include "header.php";
+$localHost = "../cscm/"; // Local
+$webHost1  = "../app1.ts2337.com/"; // FastComet
+$webHost2  = ""; // Cloudways
+
+$_SESSION['hostPath'] = $localHost;
 ?>
 
 <body>
