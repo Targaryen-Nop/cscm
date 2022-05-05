@@ -55,8 +55,6 @@ include "./components/header.php";
                 (3) หมวดวิชาเลือกเสรี
                 6
                 หน่วยกิต
-
-
             </p>
         </div>
     </div>
