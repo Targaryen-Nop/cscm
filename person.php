@@ -3,12 +3,12 @@ include "header.php";
 ?>
 
 <body>
-    <div class="container">
+    <div class="container mb-5">
 
         <div class="row justify-content-md-center">
             <div class="col col-3">
                 <div class="card mt-5 " style="width: 20rem;height: 12rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <span><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
                     <div class="card-body">
                         <h5 class="card-title">อาจารย์จิรนันท์ กมลสินธุ์</h5>
                         <p class="card-text">ตำแหน่ง: ผู้ช่วยอธิการบดี</p>

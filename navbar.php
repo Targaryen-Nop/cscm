@@ -36,8 +36,8 @@
                         หลักสูตรของคณะฯ
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">วิทยาการคอมพิวเตอร์</a></li>
-                        <li><a class="dropdown-item" href="#">คอมพิวเตอร์มัลติมีเดีย</a></li>
+                        <li><a class="dropdown-item" href="cspage.php">วิทยาการคอมพิวเตอร์</a></li>
+                        <li><a class="dropdown-item" href="cmpage.php">คอมพิวเตอร์มัลติมีเดีย</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
