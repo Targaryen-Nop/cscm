@@ -27,7 +27,7 @@
                         ข่าวและกิจกรรม
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">ข่าวประชาสัมพันธ์</a></li>
+                        <li><a class="dropdown-item" href="news.php">ข่าวประชาสัมพันธ์</a></li>
                         <li><a class="dropdown-item" href="#">กิจกรรม</a></li>
                     </ul>
                 </li>
@@ -74,7 +74,7 @@
                         ศิษย์เก่า
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">ข่าวประชาสัมพันธ์</a></li>
+                        <li><a class="dropdown-item" href="news.php">ข่าวประชาสัมพันธ์</a></li>
                         <li><a class="dropdown-item" href="#">การรับสมัครงาน</a></li>
                         <li><a class="dropdown-item" href="#">การศึกษาต่อ</a></li>
                     </ul>

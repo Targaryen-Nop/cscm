@@ -27,7 +27,10 @@
     <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
 </head>
 <html>
-<?php include 'navbar.php'; ?>
-<?php include 'bannder.php'; ?>
+<?php
+include 'navbar.php';
+include 'bannder.php';
+include 'connectdb.php';
+?>
 
 </html>

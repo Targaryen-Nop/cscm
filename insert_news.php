@@ -40,9 +40,9 @@ if (isset($_POST["submit"])) {
         }
     }
 
+    $date = date("Y/m/d H:i:s");
 
-
-    $sql = "INSERT INTO `news` (`id`, `caption`, `content`, `image`) VALUES ('" . " " . "', '" . $caption . "', '" . $content . "', '" . $file_ext . "')";
+    $sql = "INSERT INTO news (id, caption, content, image, date) VALUES ('" . " " . "', '" . $caption . "', '" . $content . "', '" . $file_ext . "', '" . $date . "')";
     $dbquery = mysqli_query($connection, $sql);
     if ($dbquery) {
 
