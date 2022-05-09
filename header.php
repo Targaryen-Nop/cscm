@@ -8,6 +8,8 @@
 
     <title>คณะวิทยาศาสตร์และเทคโนโลยี</title>
 
+    <link rel="shortcut icon" href="./images/logo.jpg" type="image/x-icon">
+
     <!-- CSS only -->
     <link rel="stylesheet" href="./public/css/font-awesome.min.css">
 

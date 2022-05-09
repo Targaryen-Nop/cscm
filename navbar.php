@@ -47,10 +47,10 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">ระบบสารสนเทศงานวิจัย</a></li>
                         <li><a class="dropdown-item" href="#">ระบบสารสนเทศรายละเอียดรายวิชา</a></li>
-                        <li><a class="dropdown-item" href="http://oweb.cpu.ac.th/cooperative/">ระบบสารสนเทศการสมัครรายงานสหกิจศึกษา</a></li>
+                        <li><a class="dropdown-item" href="http://oweb.cpu.ac.th/cooperative/" target="_blank">ระบบสารสนเทศการสมัครรายงานสหกิจศึกษา</a></li>
                         <li><a class="dropdown-item" href="#">การจัดการหาความรู้ (KM)</a></li>
-                        <li><a class="dropdown-item" href="http://library.cpu.ac.th/">ระบบสืบค้นฐานข้อมูลอิเล็กทรอนิกส์</a></li>
-                        <li><a class="dropdown-item" href="http://oweb.cpu.ac.th/login_cpu/index.php?id_=1000">ระบบแจ้งซ่อมออนไลน์</a></li>
+                        <li><a class="dropdown-item" href="http://library.cpu.ac.th/" target="_blank">ระบบสืบค้นฐานข้อมูลอิเล็กทรอนิกส์</a></li>
+                        <li><a class="dropdown-item" href="http://oweb.cpu.ac.th/login_cpu/index.php?id_=1000" target="_blank">ระบบแจ้งซ่อมออนไลน์</a></li>
                         <li><a class="dropdown-item" href="#">ปฏิทินการศึกษา</a></li>
                         <li><a class="dropdown-item" href="#">ดาวน์โหลดเอกสาร</a></li>
                     </ul>
@@ -61,8 +61,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">สหกิจศึกษา (CWIE)</a></li>
-                        <li><a class="dropdown-item" href="http://oweb.cpu.ac.th/cooperative/">ระบบสารสนเทศการสมัครรายงานสหกิจศึกษา</a></li>
-                        <li><a class="dropdown-item" href="http://oweb.cpu.ac.th/itc/chkgrade/password.php">ตรวจสอบผลการเรียนออนไลน์</a></li>
+                        <li><a class="dropdown-item" href="http://oweb.cpu.ac.th/cooperative/" target="_blank">ระบบสารสนเทศการสมัครรายงานสหกิจศึกษา</a></li>
+                        <li><a class="dropdown-item" href="http://oweb.cpu.ac.th/itc/chkgrade/password.php" target="_blank">ตรวจสอบผลการเรียนออนไลน์</a></li>
                         <li><a class="dropdown-item" href="#">ระบบฝึกงาน (WIL)</a></li>
                         <li><a class="dropdown-item" href="#">ดาวน์โหลดเอกสาร</a></li>
                         <li><a class="dropdown-item" href="#">ปฏิทินการศึกษา</a></li>
@@ -81,11 +81,11 @@
                 </li>
 
             </ul>
-            <form class="d-flex">
+            <div class="d-flex">
 
-                <button class="btn btn-danger" type="submit">สมัครเรียน</button>
-            </form>
- 
+                <button class="btn btn-danger" type="submit" onclick="location.href='http://oweb.cpu.ac.th/register_study/'">สมัครเรียน</button>
+            </div>
+
         </div>
     </div>
 </nav>
