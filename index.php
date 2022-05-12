@@ -7,7 +7,7 @@ $webHost2  = ""; // Cloudways
 $_SESSION['hostPath'] = $localHost;
 ?>
 
-<body>
+<body oncontextmenu="return false" class="snippet-body">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -45,47 +45,54 @@ $_SESSION['hostPath'] = $localHost;
             </div>
         </div>
 
-        <div class="my-5">
-            <div id="newsCarousel" class="carousel slide d-flex flex-row" data-bs-ride="carousel">
-                <?php
-                $sql = "SELECT * from news";
-                $query = mysqli_query($connection, $sql);
-                $no = 0;
-                $number_carousel = 1;
-                while ($row = mysqli_fetch_array($query)) {
-                ?>
-                    <div class="carousel-indicators ">
-                        <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="<?php echo $no; ?>" class="active" aria-current="true" aria-label="Slide <?php echo $number_carouse; ?>"></button>
+        <section class="pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="mb-3">ข่าวประชาสัมพันธ์</h3>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="card carousel-item <?php if($no == 0){ echo "active";} ?>" style="width: 20rem; height:23rem;">
-                            <img src="./upload/document/news<?php echo $row['caption'] . $row['image']; ?>" class="card-img-top" alt="..." style="width: 20rem; height:200px;">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $row['caption']; ?></h5>
-                                <p class="card-text text-truncate"><?php echo $row['content']; ?></p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
+                    <div class="col-6 text-right">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-primary mb-3" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <?php 
+                                $no = 0 ;
+                                $sql = "SELECT * from news";
+                                $query = mysqli_query($connection,$sql);
+                                while($row = mysqli_fetch_array($query)){ ?>
+                                <div class="carousel-item <?php if($no == 0){ echo "active"; } ?>">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card" onclick="javascript:location.href='news_single.php?page=<?php echo $row['caption']; ?>'">
+                                                <img class="img-fluid" alt="100%x280" src="./upload/document/news<?php echo $row['caption'].$row['image']?>" />
+                                                <div class="card-body">
+                                                    <h4 class="card-title"><?php echo $row['caption']; ?></h4>
+                                                    <p class="card-text">
+                                                    <?php echo $row['content']; ?>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    
+                                        
+                                    </div>
+                                </div>
+                                <?php $no++ ; }?>
+                                
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                <?php
-                    $no += 1;
-                    $number_carousel += 1;
-                }
-                ?>
+                </div>
             </div>
-        </div>
-    </div>
-
+        </section>
 
 
 

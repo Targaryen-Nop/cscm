@@ -6,7 +6,6 @@ include "header.php";
     <div class="container my-5 p-5 ">
         <h2 class="text-center  "><b>บุคลากรคณะวิทยาศาสตร์และเทคโนโลยี</b></h2>
         <div class="row justify-content-md-center">
-
             <div class="col col-3">
                 <div class="card mt-5 " style="width: 20rem;height: 15rem;">
                     <span style="font-size: 50px;margin:0 auto;"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
@@ -17,7 +16,6 @@ include "header.php";
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="row justify-content-md-center">
             <div class="col col-3">
