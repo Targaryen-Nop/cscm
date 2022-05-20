@@ -62,31 +62,30 @@ $_SESSION['hostPath'] = $localHost;
                     <div class="col-12">
                         <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
-                                <?php 
-                                $no = 0 ;
-                                $sql = "SELECT * from news";
-                                $query = mysqli_query($connection,$sql);
-                                while($row = mysqli_fetch_array($query)){ ?>
-                                <div class="carousel-item <?php if($no == 0){ echo "active"; } ?>">
+
+
+                                <div class="carousel-item active">
                                     <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card" onclick="javascript:location.href='news_single.php?page=<?php echo $row['caption']; ?>'">
-                                                <img class="img-fluid" alt="100%x280" src="./upload/document/news<?php echo $row['caption'].$row['image']?>" />
-                                                <div class="card-body">
-                                                    <h4 class="card-title"><?php echo $row['caption']; ?></h4>
-                                                    <p class="card-text">
-                                                    <?php echo $row['content']; ?>
-                                                    </p>
+                                        <?php
+                                        $sql = "SELECT TOP 3 * from news";
+                                        $query = mysqli_query($connection, $sql);
+                                        while($row = mysqli_fetch_array($query)){
+                                        ?>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card" onclick="javascript:location.href='news_single.php?page=<?php echo $row['caption']; ?>'">
+                                                    <img class="img-fluid" alt="100%x280" src="./upload/document/news<?php echo $row['caption'] . $row['image'] ?>" />
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">hrth</h4>
+                                                        <p class="card-text">
+                                                            <?php echo $row['content']; ?>
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        
-                                    
-                                        
+                                        <?php  } ?>
+
                                     </div>
                                 </div>
-                                <?php $no++ ; }?>
-                                
                             </div>
                         </div>
                     </div>
