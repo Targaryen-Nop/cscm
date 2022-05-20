@@ -69,7 +69,7 @@ $_SESSION['hostPath'] = $localHost;
                                 while($row = mysqli_fetch_array($query)){ ?>
                                 <div class="carousel-item <?php if($no == 0){ echo "active"; } ?>">
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col-md-4 mb-3">
                                             <div class="card" onclick="javascript:location.href='news_single.php?page=<?php echo $row['caption']; ?>'">
                                                 <img class="img-fluid" alt="100%x280" src="./upload/document/news<?php echo $row['caption'].$row['image']?>" />
                                                 <div class="card-body">
