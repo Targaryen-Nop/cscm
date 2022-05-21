@@ -60,7 +60,7 @@
                         สำหรับนักศึกษา
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">สหกิจศึกษา (CWIE)</a></li>
+                        <li><a class="dropdown-item" href="cwiemenu.php?page=index">สหกิจศึกษา (CWIE)</a></li>
                         <li><a class="dropdown-item" href="http://oweb.cpu.ac.th/cooperative/" target="_blank">ระบบสารสนเทศการสมัครรายงานสหกิจศึกษา</a></li>
                         <li><a class="dropdown-item" href="http://oweb.cpu.ac.th/itc/chkgrade/password.php" target="_blank">ตรวจสอบผลการเรียนออนไลน์</a></li>
                         <li><a class="dropdown-item" href="#">ระบบฝึกงาน (WIL)</a></li>
