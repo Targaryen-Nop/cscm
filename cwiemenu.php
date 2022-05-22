@@ -9,22 +9,25 @@ include "./header.php";
                 <div class="mt-5 ps-5">
                     <h2>เมนู</h2>
                     <hr>
-                    <div class="m-3">
+                    <div class="m-3" onclick="location.href='?page=index'">
+                        <span><i class="fa fa-hand-o-right me-3" style="font-size: 20px;" aria-hidden="true"></i> หน้าหลัก</span>
+                    </div>
+                    <div class="m-3" onclick="location.href='?page=process'">
                         <span><i class="fa fa-hand-o-right me-3" style="font-size: 20px;" aria-hidden="true"></i> กระบวนการสหกิจศึกษา</span>
                     </div>
-                    <div class="m-3">
+                    <div class="m-3" onclick="location.href='?page=dutyofstudent'">
                         <span><i class="fa fa-hand-o-right me-3" style="font-size: 20px;" aria-hidden="true"></i> บทบาทและหน้าที่ของนักศึกษาสหกิจศึกษา</span>
                     </div>
-                    <div class="m-3">
+                    <div class="m-3" onclick="location.href='?page=dutyoftech'">
                         <span><i class="fa fa-hand-o-right me-3" style="font-size: 20px;" aria-hidden="true"></i> บทบาทและหน้าที่ของอาจารย์นิเทศ</span>
                     </div>
-                    <div class="m-3">
+                    <div class="m-3" onclick="location.href='?page=featureofcompany'">
                         <span><i class="fa fa-hand-o-right me-3" style="font-size: 20px;" aria-hidden="true"></i> คุณสมบัติของสถานประกอบการ</span>
                     </div>
-                    <div class="m-3">
+                    <div class="m-3" onclick="location.href='?page=featureofstudent'">
                         <span><i class="fa fa-hand-o-right me-3" style="font-size: 20px;" aria-hidden="true"></i> คุณสมบัติของนักศึกษาสหกิจศึกษา</span>
                     </div>
-                    <div class="m-3">
+                    <div class="m-3" onclick="location.href='?page=report'">
                         <span><i class="fa fa-hand-o-right me-3" style="font-size: 20px;" aria-hidden="true"></i> การเขียนรายงาน สหกิจศึกษา</span>
                     </div>
 
@@ -40,16 +43,16 @@ include "./header.php";
                     ?>
                             <h2>สหกิจศึกษา มหาวิทยาลัยเจ้าพระยา</h2>
                             <hr>
-                            <div class="m-3">
+                            <div class="m-3" onclick="window.open('https://drive.google.com/drive/folders/1tiolP3fCS9MHPZ3UPphqkUVqVJw9mt4y', '_blank')" >
                                 <span><i class="fa fa-book me-3" style="font-size: 25px;" aria-hidden="true"></i> คู่มือสหกิจศึกษา</span>
                             </div>
-                            <div class="m-3">
+                            <div class="m-3" onclick="window.open('https://drive.google.com/drive/folders/1tiolP3fCS9MHPZ3UPphqkUVqVJw9mt4y', '_blank')" >
                                 <span><i class="fa fa-file-text-o me-3" style="font-size: 25px;" aria-hidden="true"></i> ไฟล์เล่มคู่มือ Co-op Manual_CPU</span>
                             </div>
-                            <div class="m-3">
+                            <div class="m-3" onclick="window.open('https://drive.google.com/drive/folders/1EsUeBub0qjscCpwdqPljTqui1Z8AOnsM', '_blank')">
                                 <span><i class="fa fa-file-text me-3" style="font-size: 25px;" aria-hidden="true"></i> แบบฟอร์ม และเอกสารสหกิจศึกษา</span>
                             </div>
-                            <div class="m-3">
+                            <div class="m-3" onclick="window.open('https://drive.google.com/drive/folders/1tiolP3fCS9MHPZ3UPphqkUVqVJw9mt4y', '_blank')">
                                 <span><i class="fa fa-graduation-cap me-3" style="font-size: 25px;" aria-hidden="true"></i> การจัดการเรียนการสอนรูปแบบสหกิจศึกษา</span>
                             </div>
                             <hr>
@@ -78,7 +81,7 @@ include "./header.php";
                             <div class="m-3">
                                 <span><i class="fa fa-book me-3" style="font-size: 25px;" aria-hidden="true"></i> แบบฟอร์มแผนจัดการเรียนการสอนแบบบูรณาการกับการทำงาน ระดับหลักสูตร</span>
                             </div>
-                            <div class="m-3">
+                            <div class="m-3" onclick="window.open('https://drive.google.com/file/d/1SPTDj0Y_LW-V_fa64RZnviPQrKXIXBTf/view', '_blank')">
                                 <span><i class="fa fa-book me-3" style="font-size: 25px;" aria-hidden="true"></i> ตัวอย่าง มคอ 4 ปฏิบัติภาคสนาม</span>
                             </div>
                             <hr>
@@ -136,7 +139,7 @@ include "./header.php";
                             <p class="ms-5">ผลการประเมินเป็นไปตามเกณฑ์ที่สถาบันอุดมศึกษากำหนด</p>
                         <?php
                             break;
-                        case 'duty': ?>
+                        case 'dutyofstudent': ?>
                             <h2>บทบาทและหน้าที่ของนักศึกษาสหกิจศึกษา</h2>
                             <hr>
                             <h4>บทบาทและหน้าที่ของนักศึกษาสหกิจศึกษา</h4>
@@ -214,18 +217,20 @@ include "./header.php";
                         <?php
                             break;
                         case 'featureofcompany': ?>
-                            <h2>คุณสมบัติของสถานประกอบการ</h2>
-                            <hr>
-                            <h4>คุณสมบัติของสถานประกอบการ</h4>
-                            <p class="ms-5">มหาวิทยาลัยยินดีจะร่วมมือกับสถานประกอบการทุกระดับ ที่มีคุณสมบัติดังนี้</p>
-                            <p class="ms-5">1. มีความเข้าใจ และเล็งเห็นความสำคัญในความร่วมมือในรูปแบบของสหกิจศึกษา</p>
-                            <p class="ms-5">2. เป็นสถานประกอบการที่มีการประกอบการสอดคล้องกับวิชาชีพ และสาขาวิชาเอกของนักศึกษา</p>
-                            <p class="ms-5">3. สามารถจัดผู้นิเทศงานที่มีประสบการณ์ในการดูแล และประเมินผลนักศึกษาตามกระบวนการสหกิจศึกษา</p>
-                            <p class="ms-5">4. ยินดีจ่ายค่าตอบแทน หรือสวัสดิการเกื้อกูลแก่นักศึกษาตามที่สถานประกอบการเห็นสมควร</p>
+                            <div class="mx-5">
+                                <h2>คุณสมบัติของสถานประกอบการ</h2>
+                                <hr>
+                                <h4>คุณสมบัติของสถานประกอบการ</h4>
+                                <p class="ms-5">มหาวิทยาลัยยินดีจะร่วมมือกับสถานประกอบการทุกระดับ ที่มีคุณสมบัติดังนี้</p>
+                                <p class="ms-5">1. มีความเข้าใจ และเล็งเห็นความสำคัญในความร่วมมือในรูปแบบของสหกิจศึกษา</p>
+                                <p class="ms-5">2. เป็นสถานประกอบการที่มีการประกอบการสอดคล้องกับวิชาชีพ และสาขาวิชาเอกของนักศึกษา</p>
+                                <p class="ms-5">3. สามารถจัดผู้นิเทศงานที่มีประสบการณ์ในการดูแล และประเมินผลนักศึกษาตามกระบวนการสหกิจศึกษา</p>
+                                <p class="ms-5">4. ยินดีจ่ายค่าตอบแทน หรือสวัสดิการเกื้อกูลแก่นักศึกษาตามที่สถานประกอบการเห็นสมควร</p>
+                            </div>
                         <?php
                             break;
                         case 'featureofstudent': ?>
-                        <h2>คุณสมบัติของนักศึกษาสหกิจศึกษา</h2>
+                            <h2>คุณสมบัติของนักศึกษาสหกิจศึกษา</h2>
                             <hr>
                             <h4>คุณสมบัติของนักศึกษาสหกิจศึกษา</h4>
                             <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สาขาวิชาและอาจารย์นิเทศจะเป็นผู้คัดเลือกนักศึกษาที่มีคุณสมบัติดังต่อไปนี้เป็นนักศึกษาสหกิจศึกษา</h5>
@@ -240,12 +245,32 @@ include "./header.php";
                             <p class="ms-5">7. มีวุฒิภาวะ และการพัฒนาตนเองได้ดีเพียงพอที่จะปฏิบัติงานได้ในสถานประกอบการ</p>
                             <p class="ms-5">8. ปฏิบัติตามเงื่อนไข และกระบวนการสหกิจศึกษา</p>
                             <p class="ms-5">**ผลการเรียนของนักศึกษาใช้ผลการเรียนตั้งแต่เริ่มศึกษา จนถึง ภาคการศึกษา 1/2558 </p>
-                            <?php
+                        <?php
                             break;
                         case 'report': ?>
-                        <h2>การเขียนรายงาน สหกิจศึกษา</h2>
-                        <h4>คุณสมบัติของนักศึกษาสหกิจศึกษา</h4>
+                            <h2>การเขียนรายงาน สหกิจศึกษา</h2>
                             <hr>
+                            <h4>การเขียนรายงานสหกิจศึกษาและหัวข้อในการเขียนรายงาน</h4>
+                            <h5 class="ms-3">หัวข้อในการเขียนรายงาน</h5>
+                            <h5 class="ms-3">ส่วนประกอบตอนต้น เป็นส่วนประกอบก่อนที่จะเข้าสู่เนื้อหาของรายงาน ประกอบด้วย</h5>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>ปกนอก</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>ใบรองปก</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>จดหมายนำส่งรายงาน</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>กิตติกรรมประกาศ</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>บทคัดย่อภาษาไทย</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>สารบัญ</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>สารบัญตาราง (ถ้ามี)</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>สารบัญรูป (ถ้ามี)</p>
+                            <h5 class="ms-3">ส่วนเนื้อเรื่อง เป็นส่วนสำคัญที่สุดของรายงานโดยแบ่งเนื้อหาออกเป็น 4 บท ประกอบด้วย</h5>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>บทที่ 1 บทนำ</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>บทที่ 2 รายละเอียดเกี่ยวกับโครงงาน</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>บทที่ 3 สรุปผลการปฏิบัติงาน</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>บทที่ 4 ปัญหาและข้อเสนอแนะ</p>
+                            <h5 class="ms-3">ส่วนประกอบตอนท้าย เป็นส่วนเพิ่มเติมเพื่อทำให้รายงานมีความสมบูรณ์</h5>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>บรรณานุกรม</p>
+                            <p class="ms-5"><i class="fa fa-caret-right me-2" style="font-size: 25px;" aria-hidden="true"></i>ภาคผนวก (ถ้ามี)</p>
+                            <hr>
+                            <h5 class="ms-3"><i class="fa fa-book me-2" style="font-size: 25px;" aria-hidden="true"></i>รูปแบบการเขียนรายงานสหกิจศึกษา</h5>
                     <?php } ?>
 
 
