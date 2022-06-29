@@ -5,6 +5,8 @@ $webHost1  = "../app1.ts2337.com/"; // FastComet
 $webHost2  = ""; // Cloudways
 
 $_SESSION['hostPath'] = $localHost;
+
+include 'bannder.php';
 ?>
 
 <body oncontextmenu="return false" class="snippet-body">
@@ -45,58 +47,83 @@ $_SESSION['hostPath'] = $localHost;
             </div>
         </div>
 
-        <section class="pt-5 pb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-6">
-                        <h3 class="mb-3">ข่าวประชาสัมพันธ์</h3>
-                    </div>
-                    <div class="col-6 text-right">
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                            <i class="fa fa-arrow-left"></i>
-                        </a>
-                        <a class="btn btn-primary mb-3" href="#carouselExampleIndicators2" role="button" data-slide="next">
-                            <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
+        <div class="mt-5">
+            <h3 class="">ข่าวประชาสัมพันธ์</h3>
+        </div>
 
+    </div>
+    <div class="container">
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+                <?php
+                $sql = "SELECT * from news";
+                $query = mysqli_query($connection, $sql);
+                while ($row = mysqli_fetch_array($query)) {
+                ?>
+                    <div class="swiper-slide d-flex justify-content-center">
+                        <div class="card">
+                            <figure>
+                                <img src="./upload/document/news<?php echo $row['caption'] . $row['image']; ?>" alt="Hotel">
+                            </figure>
 
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <?php
-                                        $sql = "SELECT TOP 3 * from news";
-                                        $query = mysqli_query($connection, $sql);
-                                        while($row = mysqli_fetch_array($query)){
-                                        ?>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card" onclick="javascript:location.href='news_single.php?page=<?php echo $row['caption']; ?>'">
-                                                    <img class="img-fluid" alt="100%x280" src="./upload/document/news<?php echo $row['caption'] . $row['image'] ?>" />
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">hrth</h4>
-                                                        <p class="card-text">
-                                                            <?php echo $row['content']; ?>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php  } ?>
-
-                                    </div>
-                                </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row['caption']; ?></h5>
+                                <p class="card-text"><?php echo $row['content']; ?></p>
+                                <p class="card-text"><small class="text-muted"><?php $date = date_create(substr($row['date'],0,10)); echo date_format($date,"d/F/Y"); ?></small></p>
                             </div>
                         </div>
                     </div>
-                </div>
+             
+
+                <?php } ?>
+               
             </div>
-        </section>
-
-
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
 
 
 
 </body>
+
+<style type="text/css">
+    .card {
+        width: 18rem;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.6);
+
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+</style>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 25,
+        slidesPerGroup: 1,
+        breakpoints: {
+            700: {
+                slidesPerView: 2,
+            },
+
+            970: {
+                slidesPerView: 3,
+            },
+        },
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        }
+
+
+    });
+</script>
 
 <?php include "footer.php"; ?>

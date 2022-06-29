@@ -1,5 +1,7 @@
 <?php
 include "header.php";
+
+include 'bannder.php';
 ?>
 
 <body>
