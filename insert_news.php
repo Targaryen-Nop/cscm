@@ -5,9 +5,6 @@ if (isset($_POST["submit"])) {
     $caption = $_POST['caption'];
     $content = $_POST['content'];
 
-    $massage_content = "<pre>'" . $content . "'</pre>";
-
-
     $path = "../cscm/upload/document/news";
     if (isset($_FILES["image"])) {
 

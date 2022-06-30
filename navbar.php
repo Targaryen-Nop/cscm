@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-    
+        <a class="navbar-brand" href="index.php">
+            <img src="./public/images/logo.jpg" alt="logo" width="50" height="50" class="d-inline-block align-text-top">
+           
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -82,7 +85,7 @@
 
             </ul>
             <div class="d-flex">
-            <button class="btn btn-primary me-3" type="button" onclick="location.href='backend.php'">เข้าสู่ระบบ</button>
+                <button class="btn btn-primary me-3" type="button" onclick="location.href='backend.php'">เข้าสู่ระบบ</button>
                 <button class="btn btn-danger" type="button" onclick="location.href='http://oweb.cpu.ac.th/register_study/'">สมัครเรียน</button>
             </div>
 
