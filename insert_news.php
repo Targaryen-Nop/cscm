@@ -4,51 +4,60 @@ include 'connectdb.php';
 if (isset($_POST["submit"])) {
     $caption = $_POST['caption'];
     $content = $_POST['content'];
-
-    $path = "../cscm/upload/document/news";
-    if (isset($_FILES["image"])) {
-
-        $filename           = $_FILES["image"]["name"];
-        $file_basename      = substr($filename, 0, strripos($filename, '.')); // get file name
-        $file_ext           = substr($filename, strripos($filename, '.')); // get file extension
-        $filesize           = $_FILES["image"]["size"];
-        $allowed_file_types = array('.png', '.jpg');
-
-        if (in_array($file_ext, $allowed_file_types)) {
-
-            $newfilename = $caption . $file_ext;
-            if (file_exists($path . $newfilename)) {
-                // file already exists error
-                echo "You have already uploaded this file.", "<br>";
-                unlink($path . $newfilename); //delete file
-                move_uploaded_file($_FILES["image"]["tmp_name"], $path . $newfilename);
-                echo "File uploaded replace.";
-            } else {
-                move_uploaded_file($_FILES["image"]["tmp_name"], $path . $newfilename);
-                echo "<p align='center' style='color:green;'>File uploaded successfully.</p>";
-            }
-        } else if (empty($file_basename)) {
-            // file selection error
-            echo "No file to be uploaded.";
-        } else {
-            // file type error
-            echo "Only file type : " . $allowed_file_types . " can be uploaded";
-            unlink($_FILES["file"]["tmp_name"]);
-        }
-    }
-
+    $category = $_POST['category_news'];
     $date = date("Y/m/d H:i:s");
 
-    $sql = "INSERT INTO news (id, caption, content, image, date) VALUES ('" . " " . "', '" . $caption . "', '" . $content . "', '" . $file_ext . "', '" . $date . "')";
+    $targetDir = "upload/document/";
+    $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+
+    $statusMsg = $errorMsg = $insertValuesSQL = $errorUpload = $errorUploadType = '';
+    $fileNames = array_filter($_FILES['files']['name']);
+
+
+    if (!empty($fileNames)) {
+        foreach ($_FILES['files']['name'] as $key => $val) {
+
+            // File upload path 
+            $fileName           = "NEWS" . "-" . "0001" . "-" . basename($_FILES['files']['name'][$key]);
+            $targetFilePath     = $targetDir . $fileName;
+            // Check whether file type is valid 
+            $fileType = pathinfo($targetFilePath, PATHINFO_BASENAME);
+            $fileType = substr($fileType, 10);
+            $fileType = explode(".", $fileType);
+            if (in_array($fileType[1], $allowTypes)) {
+                // Upload file to server 
+                if (move_uploaded_file($_FILES["files"]["tmp_name"][$key], $targetFilePath)) {
+                    // Image db insert sql 
+
+                    $insertValuesSQL .= "(NULL,'" . $fileName . "', '" . $date . "'),";
+                } else {
+                    $errorUpload .= $_FILES['files']['name'][$key] . ' | ';
+                }
+            } else {
+                $errorUploadType .= $_FILES['files']['name'][$key] . ' | ';
+            }
+        }
+
+        // Error message 
+        $errorUpload = !empty($errorUpload) ? 'Upload Error: ' . trim($errorUpload, ' | ') : '';
+        $errorUploadType = !empty($errorUploadType) ? 'File Type Error: ' . trim($errorUploadType, ' | ') : '';
+        $errorMsg = !empty($errorUpload) ? '<br/>' . $errorUpload . '<br/>' . $errorUploadType : '<br/>' . $errorUploadType;
+    }
+    if (!empty($insertValuesSQL)) {
+        $insertValuesSQL = trim($insertValuesSQL, ',');
+        // Insert image file name into database 
+        $sql_image = "INSERT INTO images (image_id,image_name,image_date) VALUES $insertValuesSQL";
+        $dbquery_image = mysqli_query($connection, $sql_image);
+    }
+
+    $sql = "INSERT INTO `news` (`news_id`, `caption`, `content`, `date`, `category_id`) VALUES (NULL, '".$caption."', '".$content."', '".$date."', '".$category."')";
     $dbquery = mysqli_query($connection, $sql);
     if ($dbquery) {
-
         echo "<div align='center'><font color=green size='10pt'><b>DATA INSERTED<b></font></div>";
     } else {
-
         echo "<div align='center'><font color=red size='10pt'><b>DATA NOT INSERTED<b></font></div>";
     }
-    echo "<meta http-equiv='refresh' content='1; url=backend_insert.php'>";
+    echo "<meta http-equiv='refresh' content='1; url=insert_news.php'>";
 }
 
 
@@ -77,6 +86,22 @@ if (isset($_POST["submit"])) {
                 </div>
                 <input type="text" class="form-control" aria-label="Default" name="caption">
             </div>
+            <div class="input-group mb-3 mt-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Category News</span>
+                </div>
+                <select name="category_news">
+                    <?php
+                    $sql_category = "SELECT * from categories";
+                    $query_category = mysqli_query($connection, $sql_category);
+                    while ($row_category = mysqli_fetch_array($query_category)) {
+                    ?>
+                        <option value="<?php echo $row_category['category_id'] ?>"><?php echo $row_category['category_name']; ?></option>
+                    <?php  } ?>
+                </select>
+
+            </div>
+
             <div>
                 <div class="input-group-prepend text-center">
 
@@ -84,8 +109,9 @@ if (isset($_POST["submit"])) {
                     <textarea class="form-control" name="content" aria-label="With textarea" rows="5" cols="1000"></textarea>
                 </div>
                 <div class="input-group-prepend text-center mt-5">
-                    <label for="exampleFormControlFile1">Choose Image</label>
-                    <input type="file" class="form-control-file" name="image">
+                    Select Image Files to Upload:
+                    <input type="file" name="files[]" multiple>
+
                 </div>
             </div>
             <button name="submit" type="submit" value="submit" class="btn btn-success mt-5">Success</button>
